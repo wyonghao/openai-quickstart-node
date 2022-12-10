@@ -20,8 +20,8 @@ function generatePrompt(animal) {
   return `起三个名字
 
 动物: 猫
-名字: 花花, 咪咪, The Incredible Feline
-Animal: Dog
+名字: 花花, 咪咪, 小黄
+人物: Dog
 Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
 Animal: ${capitalizedAnimal}
 Names:`;

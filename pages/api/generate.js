@@ -6,23 +6,23 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
+  //console.log("PTG,gender",req.body);
+ // console.log("PTG,gender",req.body.gender);
+ // console.log("PTG,value",req.body.inputValue);
   const completion = await openai.createCompletion({
-    model: "text-davinci-002",
-    prompt: generatePrompt(req.body.animal),
+    model: "text-davinci-003",
+    prompt: generatePrompt(req.body),
     temperature: 0.6,
   });
   res.status(200).json({ result: completion.data.choices[0].text });
 }
 
-function generatePrompt(animal) {
-  const capitalizedAnimal =
-    animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `起三个名字
-
-动物: 猫
-名字: 花花, 咪咪, 小黄
-人物: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: ${capitalizedAnimal}
-Names:`;
+function generatePrompt(UserInputs) {
+  const gender = UserInputs.gender;
+  const charater = UserInputs.inputValue;
+    //animal[0].toUpperCase() + animal.slice(1).toLowerCase();
+    //console.log("check capitalizedAnimal",capitalizedAnimal);
+    var my_promt = `起一个网名，性别为: ${gender}，要让人感觉"${charater}"，名字可以古朴。所以网名为：`;
+  console.log("提示为：",my_promt);
+  return my_promt;
 }

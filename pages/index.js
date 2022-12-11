@@ -56,12 +56,18 @@ async function onSubmit(event) {
       <br />
       <label>
         特征：
-        <input
+        <textarea id="myTextArea"
+         placeholder="Input your questions here"
+         value={inputValue}
+         onChange={(event) => setInputValue(event.target.value)}
+         ></textarea>
+ {/*        <input
           type="text"
-          placeholder="美丽，帅气，强壮...任意信息"
+          placeholder="Input your questions here"
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
-        />
+        /> */}
+
       </label>
       <br />
       <button type="submit">给我点想法</button>

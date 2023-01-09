@@ -73,6 +73,7 @@ async function onSubmit(event) {
       <button type="submit">给我点想法</button>
     </form>
     <div className={styles.result}>{result}</div>
+    **** above will give the result in plain text ****
     <div><footer><br></br>基于Open AI开发</footer> </div>
       </main>
     </div>
